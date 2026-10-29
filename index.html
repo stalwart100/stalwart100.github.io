@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name | Junior Network Engineer</title>
+<meta name="description" content="Junior network engineer working toward CCNA. Home labs, automation, and troubleshooting write-ups.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#edf1f4; --surface:#ffffff; --ink:#12263a; --muted:#52667a;
+  --line:#c9d4dd; --signal:#0b7ea6; --link-up:#1f8a4c; --warn:#b86e00;
+  --head:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1a26; --surface:#15283a; --ink:#e6eef5; --muted:#9db0c2;
+    --line:#2a4157; --signal:#4cc2ec; --link-up:#5bd68c; --warn:#f0b34a;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 var(--body)}
+a{color:var(--signal)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--signal);outline-offset:3px}
+.wrap{max-width:60rem;margin:0 auto;padding:0 1.25rem}
+nav{display:flex;gap:1.25rem;flex-wrap:wrap;padding:1.25rem 0;font-weight:500}
+nav a{color:var(--ink);text-decoration:none}
+nav a:hover{color:var(--signal)}
+h1,h2,h3{font-family:var(--head);line-height:1.15;margin:0}
+h1{font-size:clamp(2.4rem,7vw,4rem);letter-spacing:-.02em}
+h2{font-size:1.75rem;margin-bottom:1.25rem}
+h3{font-size:1.2rem}
+.hero{display:grid;gap:2rem;padding:2rem 0 3.5rem;align-items:center}
+@media(min-width:48rem){.hero{grid-template-columns:1.1fr 1fr}}
+.hero p{max-width:34rem;color:var(--muted);margin:1.25rem 0 1.75rem}
+.btns{display:flex;gap:.75rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.7rem 1.2rem;border-radius:.4rem;font-weight:500;text-decoration:none;border:2px solid var(--signal)}
+.btn.main{background:var(--signal);color:#fff}
+.btn.alt{color:var(--signal)}
+@media(prefers-color-scheme:dark){.btn.main{color:#08141e}}
+.topo{background:var(--surface);border:1px solid var(--line);border-radius:.75rem;padding:1rem}
+.topo svg{width:100%;height:auto;display:block}
+.topo .n{fill:var(--bg);stroke:var(--ink);stroke-width:2}
+.topo .l{stroke:var(--signal);stroke-width:2.5}
+.topo text{fill:var(--ink);font:500 13px var(--body)}
+.topo .m{font:400 11px var(--mono);fill:var(--muted)}
+.topo .led{fill:var(--link-up)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.led{animation:pulse 2.4s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.led{animation:none}}
+section{padding:2.5rem 0;border-top:1px solid var(--line)}
+.skills{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr))}
+.skills div{background:var(--surface);border:1px solid var(--line);border-radius:.5rem;padding:1rem 1.1rem}
+.skills h3{font-size:1rem;margin-bottom:.4rem}
+.skills p{margin:0;color:var(--muted);font-size:.975rem}
+.proj{display:grid;gap:.5rem 1.5rem;padding:1.4rem 0;border-bottom:1px solid var(--line)}
+.proj:last-child{border-bottom:0}
+@media(min-width:48rem){.proj{grid-template-columns:11rem 1fr}}
+.tag{font:400 .85rem var(--mono);color:var(--muted)}
+.status{display:inline-block;margin-top:.4rem;font-size:.85rem;font-weight:500;color:var(--warn)}
+.status.done{color:var(--link-up)}
+.proj p{margin:.4rem 0 .6rem;color:var(--muted);max-width:40rem}
+.cert{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--warn);border-radius:.5rem;padding:1.25rem 1.4rem}
+.cert p{margin:.4rem 0 0;color:var(--muted)}
+footer{padding:2.5rem 0 3rem;border-top:1px solid var(--line);color:var(--muted)}
+footer ul{list-style:none;padding:0;margin:0 0 1rem;display:flex;gap:1.5rem;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav aria-label="Main">
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#certs">Certification</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <h1>Your Name</h1>
+      <p>Junior network engineer building routed, segmented, and automated networks in the lab, and writing up what breaks and how I fix it. Currently studying for CCNA.</p>
+      <div class="btns">
+        <a class="btn main" href="#projects">See my projects</a>
+        <a class="btn alt" href="https://github.com/your-username">GitHub profile</a>
+      </div>
+    </div>
+    <div class="topo">
+      <svg viewBox="0 0 360 250" role="img" aria-label="Lab topology: a router connected to two switches, each serving a VLAN">
+        <line class="l" x1="180" y1="55" x2="90" y2="140"/>
+        <line class="l" x1="180" y1="55" x2="270" y2="140"/>
+        <line class="l" x1="90" y1="140" x2="55" y2="205"/>
+        <line class="l" x1="90" y1="140" x2="125" y2="205"/>
+        <line class="l" x1="270" y1="140" x2="235" y2="205"/>
+        <line class="l" x1="270" y1="140" x2="305" y2="205"/>
+        <rect class="n" x="145" y="25" width="70" height="40" rx="8"/>
+        <text x="180" y="50" text-anchor="middle">R1</text>
+        <rect class="n" x="55" y="120" width="70" height="40" rx="8"/>
+        <text x="90" y="145" text-anchor="middle">SW1</text>
+        <rect class="n" x="235" y="120" width="70" height="40" rx="8"/>
+        <text x="270" y="145" text-anchor="middle">SW2</text>
+        <circle class="n" cx="55" cy="210" r="12"/><circle class="n" cx="125" cy="210" r="12"/>
+        <circle class="n" cx="235" cy="210" r="12"/><circle class="n" cx="305" cy="210" r="12"/>
+        <circle class="led" cx="150" cy="30" r="4"/>
+        <circle class="led" cx="60" cy="125" r="4"/>
+        <circle class="led" cx="240" cy="125" r="4"/>
+        <text class="m" x="90" y="240" text-anchor="middle">VLAN 10</text>
+        <text class="m" x="270" y="240" text-anchor="middle">VLAN 20</text>
+        <text class="m" x="180" y="95" text-anchor="middle">OSPF area 0</text>
+      </svg>
+    </div>
+  </header>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <article class="proj">
+      <div>
+        <span class="tag">Switching, routing</span><br>
+        <span class="status done">Complete</span>
+      </div>
+      <div>
+        <h3>VLANs and inter-VLAN routing</h3>
+        <p>Segmented a small office into staff, guest, and server VLANs with router-on-a-stick, DHCP per VLAN, and ACLs that keep guests off internal hosts.</p>
+        <a href="https://github.com/your-username/vlan-intervlan-lab">View on GitHub</a>
+      </div>
+    </article>
+    <article class="proj">
+      <div>
+        <span class="tag">Dynamic routing</span><br>
+        <span class="status">In progress</span>
+      </div>
+      <div>
+        <h3>Multi-area OSPF lab</h3>
+        <p>Three-area OSPF design with route summarization at the ABR. Includes a write-up on a neighbor stuck in EXSTART caused by an MTU mismatch.</p>
+        <a href="https://github.com/your-username/ospf-multi-area-lab">View on GitHub</a>
+      </div>
+    </article>
+    <article class="proj">
+      <div>
+        <span class="tag">Automation</span><br>
+        <span class="status">Planned</span>
+      </div>
+      <div>
+        <h3>Config backup with Netmiko</h3>
+        <p>A Python script that logs into lab switches and routers over SSH, saves each running config with a timestamp, and flags changes since the last backup.</p>
+        <a href="https://github.com/your-username/netmiko-config-backup">View on GitHub</a>
+      </div>
+    </article>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills">
+      <div><h3>Switching and routing</h3><p>VLANs, trunking, STP, static routes, OSPF, inter-VLAN routing</p></div>
+      <div><h3>Services and security</h3><p>DHCP, DNS, NAT, ACLs, port security, SSH hardening</p></div>
+      <div><h3>Tools</h3><p>Cisco Packet Tracer, GNS3 or EVE-NG, Wireshark, draw.io</p></div>
+      <div><h3>Automation</h3><p>Python basics, Netmiko, Git and GitHub</p></div>
+    </div>
+  </section>
+
+  <section id="certs">
+    <h2>Certification</h2>
+    <div class="cert">
+      <h3>Cisco CCNA (200-301)</h3>
+      <p>In progress. Target exam date: add your date here. I'll link the Credly badge once I pass.</p>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <h2>Contact</h2>
+    <ul>
+      <li><a href="mailto:you@example.com">you@example.com</a></li>
+      <li><a href="https://www.linkedin.com/in/your-username">LinkedIn</a></li>
+      <li><a href="https://github.com/your-username">GitHub</a></li>
+    </ul>
+    <p>Open to junior network engineer, NOC, and help desk to network roles.</p>
+  </footer>
+</div>
+</body>
+</html>
